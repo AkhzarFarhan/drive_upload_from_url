@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+  </head>
+  <body>
+    <div class="google-upload" data-url="http://example.com/file.doc">
+      <span style="background-color: #ddd">Upload</span>
+    </div>
+    <script>
+      $(function() {
+        $(".google-upload").click(function() {
+          var url = "https://script.google.com/macros/s/#####/exec"; // Please input the URL here.
+          var withQuery = url + "?url=";
+          window.open(withQuery + $('.google-upload').attr("data-url"), "_blank", "width=600,height=600,scrollbars=1");
+        });
+      });
+    </script>
+  </body>
+</html>
