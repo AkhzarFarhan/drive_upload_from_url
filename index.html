@@ -1,19 +1,128 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
-  </head>
-  <body>
-    <div class="google-upload" data-url="https://sample-videos.com/img/Sample-jpg-image-50kb.jpg">
-      <span style="background-color: #ddd">Upload</span>
-    </div>
-    <script>
-      $(function() {
-        $(".google-upload").click(function() {
-          var url = "https://script.google.com/macros/s/AKfycbwG1mw_mztsYwdtZG8EDQcKyaIzaxgpk7QSwtbVV-5iZBfztmM/exec"; // Please input the URL here.
-          var withQuery = url + "?url=";
-          window.open(withQuery + $('.google-upload').attr("data-url"), "_blank", "width=600,height=600,scrollbars=1");
-        });
-      });
-    </script>
-  </body>
+<head>
+	<title>URL to Google Drive</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet"> 
+	<style>
+		body{
+			height: auto;
+			width: auto;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<div class="login">
+	  <div class="login-triangle"></div>
+	  <h2 class="login-header">URL to Google Drive</h2>
+	  <div class="login-container" id="form-cont">
+	    <p><input type="text" placeholder="URL" name="URL"></p>
+	    <p><input type="submit" value="Submit" onclick="SubmitForm()"></p>
+	  </div>
+	</div>
+ 	<script>
+ 		function SubmitForm(){
+	 		container = document.getElementById('form-cont')
+
+	 		url = container.querySelector('[name="URL"]').value;
+
+
+	 		window.location = `https://script.google.com/macros/s/AKfycbwG1mw_mztsYwdtZG8EDQcKyaIzaxgpk7QSwtbVV-5iZBfztmM/exec?url=${url}`;
+ 		}
+ 	</script>
+ 	<style>
+			body {
+			  background: #456;
+			  font-family: 'Quicksand', sans-serif;
+			}
+
+			.login {
+			  width: 330px;
+			  margin: auto;
+			  font-size: 16px;
+			}
+
+			/* Reset top and bottom margins from certain elements */
+			.login-header,
+			.login p {
+			  margin-top: 0;
+			  margin-bottom: 0;
+			}
+
+			/* The triangle form is achieved by a CSS hack */
+/* 			.login-triangle {
+			  width: 0;
+			  margin-right: auto;
+			  margin-left: auto;
+			  border: 12px solid transparent;
+			  border-bottom-color: #28d;
+			} */
+
+			.login-header {
+			  background: #28d;
+			  padding: 10px;
+			  font-size: 1.4em;
+			  font-weight: normal;
+			  text-align: center;
+			  text-transform: uppercase;
+			  color: #fff;
+			}
+
+			.login-container {
+			  background: #ebebeb;
+			  padding: 6px;
+			}
+
+			/* Every row inside .login-container is defined with p tags */
+			.login p {
+			  padding: 6px;
+			}
+
+			.login input {
+			  box-sizing: border-box;
+			  display: block;
+			  width: 100%;
+			  border-width: 1px;
+			  border-style: solid;
+			  padding: 8px;
+			  outline: 0;
+			  font-family: inherit;
+			  font-size: 1.1em;
+			}
+
+			.login input[type="email"],
+			.login input[type="password"] {
+			  background: #fff;
+			  border-color: #bbb;
+			  color: #555;
+			}
+
+			/* Text fields' focus effect */
+			.login input[type="email"]:focus,
+			.login input[type="password"]:focus {
+			  border-color: #888;
+			}
+
+			.login input[type="submit"] {
+			  background: #28d;
+			  border-color: transparent;
+			  color: #fff;
+			  cursor: pointer;
+			}
+
+			.login input[type="submit"]:hover {
+			  background: #17c;
+			}
+
+			/* Buttons' focus effect */
+			.login input[type="submit"]:focus {
+			  border-color: #05a;
+			}
+ 	</style>
+</body>
 </html>
