@@ -20,9 +20,11 @@
 	<div class="login">
 	  <div class="login-triangle"></div>
 	  <h2 class="login-header">URL to Google Drive</h2>
+      <p class="login-container" style="font-seight: bolder; text-align: center;">Just paste any downloading link and authorise in next screen, it will get uploaded to your Google Drive.</p>
 	  <div class="login-container" id="form-cont">
 	    <p><input type="text" placeholder="URL" name="URL"></p>
 	    <p><input type="submit" value="Submit" onclick="SubmitForm()"></p>
+        <p id="dlink" class="dlink"><a class="button" href="https://paytm.me/O-7Da85">Loved It!</a></p>
 	  </div>
 	</div>
  	<script>
@@ -40,7 +42,21 @@
 			  background: #456;
 			  font-family: 'Quicksand', sans-serif;
 			}
-
+            .button {
+                background-color: #4CAF50;
+                color: #FFFFFF;
+                box-sizing: border-box;
+                display: block;
+                width: 100%;
+                padding: 8px;
+                font-size: 1.1em;
+                text-decoration: none;
+                margin-bottom: 10px;
+            }
+            .dlink {
+                padding: 10px;
+                text-align: center;
+            }
 			.login {
 			  width: 330px;
 			  margin: auto;
